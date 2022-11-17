@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:padding="10dp"
+        android:text="New Calender Event"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#353131"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:hint=" Enter title"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1">
+
+    </EditText>
+
+    <RelativeLayout
+        android:id="@+id/rlStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        >
+
+        <TextView
+            android:id="@+id/tvStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:text="Event Start Date"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_datestart"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:layout_alignBottom="@+id/tvStartDate"
+            android:layout_toEndOf="@+id/tvStartDate"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:onClick="btnDatePickerStart"
+            android:padding="5dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:text="Select Date"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@id/tvStartDate" />
+
+    <TextView
+        android:id="@+id/btn_timestart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_alignTop="@+id/btn_datestart"
+        android:layout_alignBottom="@+id/btn_datestart"
+        android:layout_toEndOf="@+id/btn_datestart"
+        android:background="@color/white"
+        android:text="Select Time"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:onClick="btnTimePickerStart"
+        app:layout_constraintStart_toStartOf="@id/btn_datestart" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlStartDate"
+        >
+    <TextView
+        android:id="@+id/tvEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event End Date  "
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_dateend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvEndDate"
+            android:layout_alignBottom="@+id/tvEndDate"
+            android:layout_toEndOf="@+id/tvEndDate"
+            android:background="@color/white"
+            android:onClick="btnDatePickerEnd"
+            android:text="Select Date"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@id/tvEndDate" />
+
+        <TextView
+            android:id="@+id/btn_timeend"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_dateend"
+            android:layout_alignBottom="@+id/btn_dateend"
+            android:layout_toEndOf="@+id/btn_dateend"
+            android:background="@color/white"
+            android:text="Select Time"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:onClick="btnTimePickerEnd"
+            app:layout_constraintStart_toStartOf="@id/btn_dateend" />
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:text="All Day Event"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlEndDate" />
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="9dp"
+        android:inputType="text"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:hint=" Enter Description"
+        android:textColorHint="@color/black"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox">
+    </EditText>
+    <EditText
+        android:id="@+id/etEmails"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="9dp"
+        android:inputType="text"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:hint=" Enter Invitees"
+        android:textColorHint="@color/black"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescription">
+    </EditText>
+
+    <RelativeLayout
+        android:id="@+id/rlAccessSwitch"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@id/etEmails"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvAccess"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="Access:    "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPublic"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/tvAccess"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:text="Public"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/accessSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/tvPublic"
+            android:background="@color/white"
+            android:checked="true"
+            android:textOff="Public"
+            android:textOn="Private" />
+
+        <TextView
+            android:id="@+id/tvPrivate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/accessSwitch"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:text="Private"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+<Button
+    android:id="@+id/addEvent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Add Event"
+    android:layout_marginTop="9dp"
+    app:layout_constraintTop_toBottomOf="@id/rlAccessSwitch"
+    android:onClick="addEventClicked"/>
+
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:padding="10dp"
+        android:text="Capture Photo"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#353131"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addEvent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="65dp"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:text="Capture"
+        android:onClick="photoClicked"></Button>
+
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:padding="10dp"
+        android:text="Make a call"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#353131"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/capture" />
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="9dp"
+        android:inputType="text"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:hint=" Contact Number"
+        android:textColorHint="@color/black"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+    <Button
+        android:id="@+id/call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv4"
+        android:text="Call"
+        android:onClick="callClicked"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
